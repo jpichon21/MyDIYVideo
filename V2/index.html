@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Test Landing Page</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link href="css/all.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script>
+        $(window).load(function() {
+            $('.flexslider').flexslider({
+            });
+            randombg();
+        });
+
+        function randombg () {
+            console.log('test')
+            var random = Math.floor(Math.random() * 5) + 0
+            var bigSize = [
+                "url('assets/img/01.jpg')",
+                "url('assets/img/02.jpg')",
+                "url('assets/img/03.jpg')",
+                "url('assets/img/04.jpg')",
+                "url('assets/img/05.jpg')"
+            ]
+            document.getElementById('section5').style.backgroundImage = bigSize[random]
+        }
+
+    </script>
+</head>
+<body>
+
+    <nav id="mainMenu"></nav>
+
+<div id="mainContainer">
+        <div id="videoParallaxe">
+                <div class="flexslider">
+                    <ul class="slides">
+                          <li>
+                                <video autoplay loop  muted id="">
+                                        <source src="assets/video/arnaud.mp4" type="video/mp4">
+                                </video>
+                          </li>
+                         <li>
+                                <video autoplay loop muted id="">
+                                        <source src="assets/video/natacha.mp4" type="video/mp4">
+                                </video>
+                          </li>
+                          <li>
+                                <video autoplay loop muted id="">
+                                        <source src="assets/video/pro.mp4" type="video/mp4">
+                                </video>
+                          </li>
+                          <li>
+                                <video autoplay loop muted id="">
+                                        <source src="assets/video/court.mp4" type="video/mp4">
+                                </video>
+                          </li>
+                         
+                    </ul>
+                </div>
+        </div>
+
+        <div id="section1">
+            <div class="content">
+                <h1>Réaliser soi-même son film d'entreprise, c'est <b>facile</b> et <b>pas cher</b> avec les services de <span><b>mydiyvideo.com</b></span> ! </h1>
+                <div id="pictoContainer"><img src="assets/img/picto.png"></div>
+            </div>
+        </div>
+
+        <div id="section2">
+            <div class="content">
+                <div>
+                    <h2><i class="fas fa-video"></i> Un film, c'est du tournage</h2>
+                    <p>Vous filmez et mydiyvideo.com vous accompagne avec des formations et/ou du coaching</p>
+                </div>
+                <div>
+                    <button class="btn btn-primary">Formation - En savoir plus</button>
+                    <button class="btn btn-primary">Coaching - En savoir plus</button>
+                    <button class="btn btn-primary">Nous contacter</button>
+                </div>
+            </div>
+        </div>
+
+                
+        <div id="section3">
+                <div class="content">
+                    <div>
+                        <h2> Un film, c'est aussi un bon montage <i class="fas fa-film"></i> </h2>
+                        <p>mydiyvideo.com est la plateforme de référence pour faire monter vos vidéos par des pros</p>
+                    </div>
+                    <div >
+                        <button class="btn btn-primary">Plateforme de montage - En savoir plus</button>
+                        <button class="btn btn-primary">Inscrivez-vous gratuitement & accéder à votre espace projet privé</button>
+                    </div>
+                </div>
+            </div>
+
+        <div id="section4">
+                    <div class="content">
+                        <div>
+                            <p>La vidéo est le média de communication incontournable pour promouvoir vos activités, pour informer, sensibiliser, enseigner.<br>
+                            Bien plus efficace est économe que les mailings, les newsletters, les brochures ...</p>
+                            <p>Nous vous accompagnons dans la création de vos vidéos en vous proposant nos services <b>"Do It Yourself"</b> afin de vous autonomiser et vous rendre le contrôle sur vos réalisations audiovisuelles.<br>
+                            Que ce soit par des formations, du coaching ou grâce à notre plateforme innovante de montage vidéo en ligne par des professionnels</p><br>
+
+                            <span class="tagline">Alors c'est parti ! Filmez dès maintenant  <i class="far fa-hand-pointer"></i></span>
+    
+                            
+                        </div>
+                    </div>
+        </div>
+
+        <div id="section5" >
+                <div class="content">
+                
+     
+                </div>
+        </div>
+
+        <div id="section6">
+                <div class="content">
+                    <div>
+                        <h2>Initiation Gratuite autour d'une rencontre</h2>
+                        <p>Qu'est-ce qu'un film de communication, comment ça se prépare, quelles sont les étapes clés, pleins de petits trucs et astuces pour bien démarrer votre film et utiliser notre plateforme midiyvideo.com.<br>Selon vos disponibilités, nous nous déplaçons gratuitement dans vos locaux et en 1 heure, vous aurez déjà une bonne idée des moyens qui sont à votre disposition pour réaliser vos propres films de com.</p>
+                    </div>
+                    <div >
+                        <button class="btn btn-primary">Plus d'info - Prendre rendez-vous</button>
+                    </div>
+                </div>
+        </div>
+
+        <div id="section7">
+                <div class="content">
+                    <div>
+                        <h2>Formation sur les techniques de tournage</h2>
+                        <p>Vous avez forcément un téléphone ou une petite caméra pour filmer, mais vous ne savez pas trop comment l'utiliser pour obtenir des images exploitables.<br>Nous vous proposons notre formation sur les techniques de base d'un tournage réussi : cadrages, expositions, mouvements de caméra, techniques d'interview...</p>
+                        <p>Notre formateur se dépalce dans vos locaux pour 4h avec son matériel et s'adapte au vôtre. La formation est destinée à un petit groupe jusqu'à 6 personnes et alterne des contenus théoriques avec des exercices de mise en pratiques</p>
+                    </div>
+                    <div >
+                        <button class="btn btn-primary">Plus d'info - Prendre rendez-vous</button>
+                    </div>
+                </div>
+        </div>
+
+        <footer>
+            <p>Copyright Lorem Ipsum</p>
+        </footer>
+        
+        
+
+
+</div>
+
+</body>
+</html>
