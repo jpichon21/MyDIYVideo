@@ -134,18 +134,18 @@ body{
 
 #section6{
     .content{
-        padding: 60px 80px 30px 80px;
+        padding: 60px 120px 30px 120px;
     }
 }
 
 #section7{
     .content{
-        padding: 30px 80px 60px 80px;
+        padding: 30px 120px 60px 120px;
     }
 }
 
 footer{
-    padding: 20px 80px;
+    padding: 20px 120px;
     background-color: $color-lightblue;
     color: white;
     p{
@@ -218,5 +218,27 @@ footer{
     transition: 1s ease-in-out;
 }
 
-#section6{
+#section7{
+    text-align: right;
+}
+
+#midSection2{
+    position: relative;
+    height: 27.7vw; //472px * 1690
+    background-image: url('../assets/img/01.jpg');
+    background-size: cover;
+}
+
+#midSection3{
+    position: relative;
+    height: 27.7vw; //472px * 1690
+    background-image: url('../assets/img/05.jpg');
+    background-size: cover;
+}
+
+#midSection4{
+    position: relative;
+    height: 27.7vw; //472px * 1690
+    background-image: url('../assets/img/02.jpg');
+    background-size: cover;
 }
