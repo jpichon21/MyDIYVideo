@@ -67,23 +67,37 @@ h1 {
         text-align: center;
         z-index: 3;
     }
+    
+    .flex-direction-nav a {
+        height: 60px;
+    }
 
     .flex-control-paging li a.flex-active {
         background: #000;
-        background: $color-lightblue;
+        background: white;
         //border: 1px solid white;
         cursor: default;
     }
 
     .flex-direction-nav a.flex-next:before {
-        content: '>' !important;
+        //content: '>' !important;
         outline: none;
     }
 
     .flex-direction-nav a.flex-prev:before {
-        content: '<' !important;
+        //content: '<' !important;
         outline: none;
     }
+}
+
+#mute-video{
+    position: absolute;
+    z-index: 100;
+    bottom: 24px;
+    right: 20%;
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
 }
 
 #testimonies {
@@ -228,12 +242,14 @@ footer {
 }
 
 #section0 {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     margin-top: 24vw;
-    color: white;
+    color: black;
     //background: $color-redgradient;
-    background-color: $color-lightblue;
+    background-color: white;
     height: 46px;
     position: relative;
+    padding-top: 12px;
 }
 
 #section1 {

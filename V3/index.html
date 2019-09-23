@@ -24,12 +24,37 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script src="js/jquery.flexslider-min.js"></script>
-    <script src="js/main.js"></script>
 
     <script>
         $(window).load(function () {
-            $('.flexslider').flexslider({});
-            randombg();
+            $('.flexslider').flexslider({
+                slideshowSpeed: 30000,
+                after: function (slider) {
+                    $("video").prop('muted', true);
+                    $this = $(".flex-active-slide video");
+                    $("#mute-video").find("i").last().remove();
+                    $("#mute-video").append('<i class="fas fa-volume-mute"></i>');
+                },
+                start: function (slider) {
+                    $('body').removeClass('loading');
+                }
+            });
+        });
+        $(document).ready(function () {
+            $("#mute-video").click(function () {
+                $this = $(".flex-active-slide video")
+                $("video").prop('muted', true);
+                if ($this.prop('muted')) {
+                    $this.prop('muted', false);
+                    $("#mute-video").find("i").last().remove();
+                    $("#mute-video").append('<i class="fas fa-volume-down"></i>');
+
+                } else {
+                    $this.prop('muted', true);
+                    $("#mute-video").find("i").last().remove();
+                    $("#mute-video").append('<i class="fas fa-volume-mute"></i>');
+                }
+            });
         });
     </script>
 
@@ -42,24 +67,25 @@
     <div id="mainContainer">
         <div id="videoParallaxe">
             <div class="flexslider">
+                <span id="mute-video"><i class="fas fa-volume-mute"></i></span>
                 <ul class="slides">
                     <li>
-                        <video autoplay loop muted id="">
+                        <video autoplay loop muted id="" data-duration="30000">
                             <source src="assets/video/arnaud.mp4" type="video/mp4">
                         </video>
                     </li>
                     <li>
-                        <video autoplay loop muted id="">
+                        <video autoplay loop muted id="" data-duration="30000">
                             <source src="assets/video/natacha.mp4" type="video/mp4">
                         </video>
                     </li>
                     <li>
-                        <video autoplay loop muted id="">
+                        <video autoplay loop muted id="" data-duration="23000">
                             <source src="assets/video/pro.mp4" type="video/mp4">
                         </video>
                     </li>
                     <li>
-                        <video autoplay loop muted id="">
+                        <video autoplay loop muted id="" data-duration="35000">
                             <source src="assets/video/court.mp4" type="video/mp4">
                         </video>
                     </li>
@@ -69,17 +95,18 @@
         </div>
 
         <div id="section0">
-                <div class="content">
-                    <div>
-                            <h1>Réaliser soi-même son film d'entreprise, c'est <b>facile</b> et <b>pas cher</b> avec les services de
-                                <span><b>mydiyvideo.com</b></span> ! </h1>
-                    </div>
+            <div class="content">
+                <div>
+                    <h1>Réaliser soi-même son film d'entreprise, c'est <b>facile</b> et <b>pas cher</b> avec les
+                        services de
+                        <span><b>mydiyvideo.com</b></span> ! </h1>
                 </div>
             </div>
+        </div>
 
         <div id="section1">
             <div class="content">
-                
+
                 <div id="pictoContainer"><img src="assets/img/picto.png"></div>
                 <div id="ctaContainer">
                     <div class="content">
