@@ -6,6 +6,7 @@ $color-bleu: #217685;
 $color-lightblue: #2c98ac;
 $color-lighterblue: #2ea5bb;
 $color-darkred: #932323;
+$color-darkerred: #791b1b;
 $color-redgradient: radial-gradient(#bc2d2d, #8a2121);
 $color-bluegradient : radial-gradient(#13abc7, #2ea5bb);
 $color-greygradient : linear-gradient(90deg, rgba(211, 211, 211, 1) 0%, rgba(255, 255, 255, 1) 100%);
@@ -367,8 +368,8 @@ body {
 }
 
 footer {
-    padding: 20px 120px;
-    background: $color-black;
+    padding: 20px 60px;
+    background: $color-darkerred;
     color: white;
 
     @include media('<=tablet') {
@@ -378,6 +379,11 @@ footer {
     p {
         margin: 0px;
         font-size: 14px;
+    }
+    a, a:hover, a:focus, a:visited, a:active{
+        color: white;
+        text-decoration: none;
+        float: right;
     }
 
     position: relative;
