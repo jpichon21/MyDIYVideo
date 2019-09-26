@@ -31,7 +31,7 @@
     <script>
         $(window).load(function () {
             $('.flexslider').flexslider({
-                slideshowSpeed: 30300 ,
+                slideshowSpeed: 31000,
                 after: function (slider) {
                     $this = $(".flex-active-slide video");
                     $else = $("video");
@@ -46,7 +46,6 @@
                 },
                 start: function (slider) {
                     $('body').removeClass('loading');
-                    offset: 1000;
                 }
             });
         });
@@ -100,7 +99,7 @@
                     $('html, body').animate({
                         scrollTop: $(hash).offset().top - $("#mainMenu").height()
                     }, 800, function () {
-                        window.location.hash = hash;
+                       // window.location.hash = hash;
                     });
                 }
             });
@@ -149,7 +148,7 @@
 <body>
 
     <nav id="mainMenu">
-        <div id="logoContainer"><img src="assets/img/LogoSansBaseline.png"></div>
+        <div id="logoContainer"><a href="http://mydiyvideo.com"><img src="assets/img/LogoSansBaseline.png"></a></div>
         <div id="textContainer">
             <div id="tagline">Le do it Yourself de la vidéo en entreprise</div>
             <div id="dual"><i class="fas fa-circle"></i> Vous tournez <i class="fas fa-pause"></i> Nous montons <i
