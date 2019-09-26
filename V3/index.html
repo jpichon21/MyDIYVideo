@@ -31,23 +31,22 @@
     <script>
         $(window).load(function () {
             $('.flexslider').flexslider({
-                slideshowSpeed: 30000,
+                slideshowSpeed: 30300 ,
                 after: function (slider) {
                     $this = $(".flex-active-slide video");
+                    $else = $("video");
                     var media = $(".flex-active-slide video").get(0);
                     if (media.paused) {
                         media.play();
                     }
-                    if ($this.prop('muted')) {
-                        $("#mute-video").find("i").last().remove();
-                        $("#mute-video").append('<i class="fas fa-volume-mute"></i>');
-                    } else {
-                        $("#mute-video").find("i").last().remove();
-                        $("#mute-video").append('<i class="fas fa-volume-down"></i>');
-                    }
+                    $else.prop('muted', true);
+                    $this.prop('muted', false);
+                    $("#mute-video").find("i").last().remove();
+                    $("#mute-video").append('<i class="fas fa-volume-down"></i>');
                 },
                 start: function (slider) {
                     $('body').removeClass('loading');
+                    offset: 1000;
                 }
             });
         });
