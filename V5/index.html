@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DIY - Le Do It Yourself de la vidéo en entreprise</title>
+
+    <meta name="description"
+        content="My DIY Video, service pour entreprises. Vous tournez, nous montons, vous communiquez. Devis gratuit et immédiat, livraison rapide, inscription gratuite.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="favicon.ico" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link href="css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.0.2/dist/simpleParallax.min.js"></script>
+    <script src="js/scrollreveal.min.js"></script>
+
+    <script>
+        $(window).load(function () {
+            $('#videoSlider').flexslider({
+                //slideshowSpeed: 31000,
+                slideshow: false,
+                after: function (slider) {
+                    $this = $(".flex-active-slide video");
+                    $else = $("video");
+                    var media = $(".flex-active-slide video").get(0);
+                    if (media.paused) {
+                        media.play();
+                    }
+                    $else.prop('muted', true);
+                    $this.prop('muted', false);
+                    $("#mute-video").find("i").last().remove();
+                    $("#mute-video").append('<i class="fas fa-volume-down"></i>');
+                },
+                start: function (slider) {
+                    $('body').removeClass('loading');
+                }
+            });
+            $('#testimoniesSlider').flexslider({
+                slideshow: true
+            });
+        });
+    
+        $(document).ready(function () {
+
+            //parallaxe
+            var image1 = document.getElementsByClassName('midSection2');
+            new simpleParallax(image1, {
+                delay: 6,
+                transition: 'cubic-bezier(0,0,0,5)',
+                scale: 1.3,
+                orientation: 'down',
+            });
+            var image2 = document.getElementsByClassName('midSection3');
+            new simpleParallax(image2, {
+                delay: 6,
+                transition: 'cubic-bezier(0,0,0,5)',
+                scale: 1.3,
+                orientation: 'down',
+            });
+            var image3 = document.getElementsByClassName('midSection4');
+            new simpleParallax(image3, {
+                delay: 6,
+                transition: 'cubic-bezier(0,0,0,5)',
+                scale: 1.3,
+                orientation: 'down',
+            });
+
+            //audio on-off
+            $("#mute-video").click(function () {
+                $this = $(".flex-active-slide video")
+                $else = $("video")
+                if ($this.prop('muted')) {
+                    $else.prop('muted', true);
+                    $this.prop('muted', false);
+                    $("#mute-video").find("i").last().remove();
+                    $("#mute-video").append('<i class="fas fa-volume-down"></i>');
+                } else {
+                    $else.prop('muted', true);
+                    $this.prop('muted', true);
+                    $("#mute-video").find("i").last().remove();
+                    $("#mute-video").append('<i class="fas fa-volume-mute"></i>');
+                }
+            });
+
+            //smooth scroll
+            $("a").click(function () {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    var offHeight = $("#mainMenu").height() - 42;
+                    console.log(offHeight);
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top - $("#mainMenu").height()
+                    }, 800, function () {
+                        // window.location.hash = hash;
+                    });
+                }
+            });
+
+            //reveal
+            ScrollReveal().reveal('#section0 .content', {
+                delay: 100
+            });
+            ScrollReveal().reveal('#section1 .content', {
+                delay: 200
+            });
+            ScrollReveal().reveal('#section4 .content', {
+                delay: 400
+            });
+            ScrollReveal().reveal('#section2 .content', {
+                delay: 400
+            });
+            ScrollReveal().reveal('#section3 .content', {
+                delay: 600
+            });
+            ScrollReveal().reveal('#section2b .content', {
+                delay: 800
+            });
+            ScrollReveal().reveal('#section5 .content', {
+                delay: 400
+            });
+            ScrollReveal().reveal('#section3b .content', {
+                delay: 600
+            });
+            ScrollReveal().reveal('#testimonies .content', {
+                delay: 400
+            });
+            ScrollReveal().reveal('#sectionMore .content', {
+                delay: 600
+            });
+            ScrollReveal().reveal('footer p', {
+                delay: 600
+            });
+
+
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <nav id="mainMenu">
+        <div id="logoContainer"><a href="http://mydiyvideo.com"><img src="assets/img/LogoSansBaseline.png"></a></div>
+        <div id="textContainer">
+            <div id="tagline">Le do it Yourself de la vidéo en entreprise</div>
+            <div id="dual"><i class="fas fa-circle"></i> Vous tournez <i class="fas fa-pause"></i> Nous montons <i
+                    class="fas fa-play"></i> Vous communiquez</div>
+            <div id="button"><a href="#section3"><button class="btn btn-primary">Connexion</button></a></div>
+        </div>
+    </nav>
+
+    <div id="mainContainer">
+        <div id="videoParallaxe">
+            <div class="flexslider" id="videoSlider">
+                <span id="mute-video"><i class="fas fa-volume-mute"></i></span>
+                <ul class="slides">
+                    <li>
+                        <video autoplay muted id="" data-duration="30000">
+                            <source src="assets/video/arnaud.mp4" type="video/mp4">
+                        </video>
+                    </li>
+                    <li>
+                        <video muted id="" data-duration="30000">
+                            <source src="assets/video/natacha.mp4" type="video/mp4">
+                        </video>
+                    </li>
+                    <li>
+                        <video muted id="" data-duration="23000">
+                            <source src="assets/video/pro.mp4" type="video/mp4">
+                        </video>
+                    </li>
+                    <li>
+                        <video muted id="" data-duration="35000">
+                            <source src="assets/video/court.mp4" type="video/mp4">
+                        </video>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div id="section0">
+            <div class="content">
+                <div>
+                    <h1> Réaliser soi-même son film d'entreprise, c'est <b>facile</b>
+                        et <b>pas cher</b> avec les
+                        services de
+                        <span><b>mydiyvideo.com</b></span> </h1>
+                </div>
+            </div>
+        </div>
+
+        <div id="section1">
+            <div class="content">
+
+                <div id="pictoContainer"><img src="assets/img/picto.png"></div>
+                <div id="ctaContainer">
+                    <div class="content">
+                        <div>
+                            <h2><i class="fas fa-video"></i> Un film, c'est du tournage</h2>
+                            <p>Vous filmez et mydiyvideo.com vous accompagne avec des formations et/ou du coaching</p>
+                        </div>
+                        <div>
+                            <a href="#section3"><button class="btn btn-primary">Formation - En savoir plus</button></a>
+                            <a href="#section2b"><button class="btn btn-primary">Coaching - En savoir plus</button></a>
+                            <a href="http://mydiyvideo.com/Home/Contact"><button class="btn btn-primary">Nous
+                                    contacter</button></a>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div>
+                            <h2><i class="fas fa-film"></i> Un film, c'est aussi un bon montage </h2>
+                            <p>mydiyvideo.com est la plateforme de référence pour faire monter vos vidéos par des pros
+                            </p>
+                        </div>
+                        <div>
+                            <a href="#section5"><button class="btn btn-primary">Plateforme de montage - En savoir
+                                    plus</button></a>
+                            <a href="http://mydiyvideo.com/Account/Register"><button
+                                    class="btn btn-primary">Inscrivez-vous gratuitement </button></a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="section4">
+            <div class="content">
+                <div>
+                    <p> La vidéo est le média de communication incontournable pour promouvoir
+                        vos activités, pour
+                        informer, sensibiliser, enseigner. <br>
+                        <b>Bien plus efficace et économe</b> que les mailings, les newsletters, les brochures ...
+                    </p>
+                    <p> Nous vous accompagnons dans la création de vos vidéos en
+                        vous proposant nos services <b>"Do It
+                            Yourself"</b> afin de vous autonomiser et vous rendre le contrôle sur vos réalisations
+                        audiovisuelles.
+                    </p>
+                    <p>Que ce soit par des <a href="#section3"><b>formations</b></a>, du <a
+                            href="#section2b"><b>coaching</b></a> ou grâce à notre plateforme innovante de <a
+                            href="#section5"><b>montage
+                                vidéo en ligne</b></a>, nos professionnels de l’image sont à votre service
+                    </p>
+                    <p> <a href="#section2"><b><i class="fas fa-arrow-circle-down"></i> Alors c'est parti ! Filmez dès
+                                maintenant
+                                ! Vous avez tout ce qu’il vous faut dans votre
+                                poche. <i class="fas fa-arrow-circle-down"></i></b></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="midSection2">
+            <img class="thumbnail midSection2" src="assets/img/01b.png" alt="image">
+        </div>
+
+        <div id="section2">
+            <div class="content">
+                <div>
+                    <h2><i class="fas fa-users"></i> Initiation gratuite autour d'une rencontre</h2>
+                    <p>
+                        Qu’est-ce qu’un film de communication, comment ça se prépare, quelles sont les étapes clés,
+                        plein de petits trucs et astuces pour bien démarrer votre film et utiliser notre plateforme
+                        <strong>mydiyvideo.com</strong><br>
+                        Selon vos disponibilités, nous nous déplaçons <strong>gratuitement</strong> dans vos locaux et
+                        en 1 heure, vous aurez déjà une bonne idée des moyens qui sont à votre disposition pour <strong>réaliser
+                            vos propres films</strong> de com.
+                    </p>
+                </div>
+                <div>
+                    <a href="http://mydiyvideo.com/Home/Contact"><button class="btn btn-primary">Plus d'info - Prendre
+                            rendez-vous</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="section3">
+            <div class="content">
+                <div>
+                    <h2>Formation sur les techniques de tournage <i class="fas fa-toolbox"></i></h2>
+                    <p>Vous avez forcément un téléphone ou une petite caméra pour filmer, mais vous ne savez pas trop
+                        comment l’utiliser pour obtenir des images exploitables.
+                        <br>Nous vous proposons notre <strong>formation sur les techniques de base d’un tournage
+                            réussi :</strong>
+                        cadrages, expositions, mouvements de caméra, techniques d’interview, …
+                        <br>
+                        Notre formateur se déplace dans vos locaux pour <strong>4h</strong> avec son matériel et
+                        s’adapte au vôtre.<br>
+                        La formation est destinée à un petit groupe jusqu’à <strong>6 personnes</strong> et alterne des
+                        <strong>contenus
+                            théoriques avec des exercices de mise en pratique.</strong>
+                    </p>
+                </div>
+                <div>
+                    <a href="http://mydiyvideo.com/Home/Contact"><button class="btn btn-primary">Plus d'info - Prendre
+                            rendez-vous</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="section2b">
+            <div class="content">
+                <div>
+                    <h2><i class="fas fa-hands-helping"></i> Coaching audiovisuel</h2>
+                    <p>
+                        Vous êtes sur un projet réel de réalisation d’un film de com, mais vous avez besoin d’un peu
+                        plus de <strong>support de la part d’un professionnel.</strong><br>Nous vous proposons un
+                        accompagnement
+                        personnalisé sur les différentes phases de votre vidéo.
+                        Que ce soit pour la <strong>scénarisation, le tournage, les interviews …</strong>
+                        nous pouvons vous apporter
+                        une aide <strong>à distance ou sur place</strong> selon votre convenance.
+
+                    </p>
+                </div>
+                <div>
+                    <a href="http://mydiyvideo.com/Home/Contact"><button class="btn btn-primary">Plus d'info - Prendre
+                            rendez-vous</button></a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="midSection3">
+            <img class="thumbnail midSection3" src="assets/img/02b.png" alt="image">
+        </div>
+
+
+        <div id="section5">
+            <div class="content">
+                <div>
+                    <h2><i class="fas fa-photo-video"></i> La plateforme de montage vidéo mydiyvideo.com</h2>
+                    <p>
+                        Le montage vidéo est certainement la phase la plus consommatrice de temps et celle qui demande
+                        le plus de compétences techniques.<br>
+                        <strong>Notre plateforme mydiyvideo.com</strong> vous permet de <strong>gagner du temps</strong>
+                        et de vous débarrasser de cette
+                        étape épineuse <strong>à moindre coût.</strong> En effet, en fonction de la matière que vous
+                        chargez, vous pouvez
+                        obtenir un film de qualité dès 55€. Soit approximativement <strong>10 fois moins chers qu’avec
+                            une
+                            agence de com traditionnelle.</strong><br>
+
+                        Il vous suffit de charger les vidéos et les photos que vous voulez voir montées dans votre
+                        espace personnel sur notre site. Indiquez alors en quelques mots la façon dont vous voulez voir
+                        votre film agencé et <strong>nos monteurs professionnels s’occuperont du reste.</strong>
+                        <br> Pas de mauvaises
+                        surprises : avant même de passer commande, vous aurez une vision claire et précise du coût et du
+                        temps nécessaire à la réalisation de votre projet. Ce n’est seulement qu’après avoir validé le
+                        montage final que vous recevrez la facture pour paiement.
+                        <p><b>Inscrivez-vous dès maintenant pour tester la plateforme, ça ne coûte rien !</b></p>
+                    </p>
+                </div>
+                <div>
+                    <a href="http://mydiyvideo.com/Home/Contact"><button class="btn btn-primary">Plus d’info -
+                            Contactez-nous</button></a>
+                    <a href="http://mydiyvideo.com/Account/Register"><button class="btn btn-primary">Inscrivez-vous
+                            gratuitement </button></a>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="section3b">
+            <div class="content">
+                <div>
+                    <h2>Une économie locale <i class="fas fa-map-marked-alt"></i></h2>
+                    <p>En utilisant les services de mydiyvideo.com, <b>vous participez à l’économie
+                            locale.</b> Nos monteurs
+                        vidéo professionnels qui s’occuperont de vos films, tout en étant proche de chez vous, n’ont pas
+                        besoin de se déplacer ni dans une maison de production ni dans vos locaux. Ils travaillent à
+                        distance, chez eux, sur les mêmes outils que les studios de production.<br> Grâce à notre
+                        plateforme
+                        en ligne nous assurons la coordination des projets et le respect de la qualité. C’est comme ca
+                        que mydiyvideo.com assure des petits prix sur vos montages vidéo tout en gardant une qualité et
+                        un service professionnel : <strong>pas de frais de déplacement, pas de coût dans une
+                            infrastructure
+                            lourde et une participation à 100% sur l’emploi local.</strong>
+
+                    </p>
+                </div>
+                <div>
+                </div>
+            </div>
+        </div>
+
+        <div id="midSection4">
+            <img class="thumbnail midSection4" src="assets/img/03b.png" alt="image">
+        </div>
+
+        <div id="testimonies">
+            <div class="content">
+                <h2><i class="far fa-check-square"></i> Ils en parlent</h2>
+                <div class="flexslider cards" id="testimoniesSlider">
+                    <ul class="slides">
+                        <li>
+                            <p>
+                                Félicitations pour votre plateforme DIY, nous en sommes vraiment très contents! Cela
+                                nous permet de faire beaucoup plus de vidéos qu’avant et de les publier beaucoup plus
+                                vite. C’est juste parfait! En plus, le montage est toujours bien fait, suivant nos
+                                indications. C’est une aide précieuse. 
+                                <span>Véronique L’heureux - AG Real Estate
+                                </span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Notre nouveau credo pour 2018! Sans y passer des heures en organisation, en
+                                investissements de communications coûteuses ou en gestion de softwares complexes. En
+                                quelques clicks nous chargeons les images, nous communiquons nos légendes et en un tour
+                                de main nous obtenons un montage dynamique à faire passer à nos équipes on line.  
+                                <span>Brigitte Dubuisson - AGC Glass Europe
+
+                                </span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Les outils fournis par My DIY Video permettent une autonomie d’utilisation et le
+                                principe en est efficace. Pour une PME souvent sollicitée pour faire de la publicité
+                                locale, il vaut mieux investir dans ce genre de solution aux budgets maitrisés.   
+                                <span>Jean-Yves Wilmot - Pâtisserie Wilmot
+
+                                </span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Tout en respectant des délais de livraison rapide, les monteurs de My DIY Video
+                                produisent un montage de qualité en suivant scrupuleusement nos consignes et l’esprit
+                                souhaité pour notre réalisation. 
+                                <span>Pierre-Yves Titeux - Les Anémones ASBL
+
+
+                                </span>
+                            </p>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="sectionMore">
+            <div class="content">
+                <div>
+                    <h2>Pour aller plus loin</h2>
+                    <p>Vous avez besoin de professionnels pour gérer et <strong>réaliser votre projet de A à Z</strong>,
+                        faites appel à l’expertise de <strong>Pragmagora Creative Media</strong>.<br> Que ce soit pour
+                        du
+                        tournage sous toutes ses formes, du montage, de l’animation, du motion design mais également du
+                        sous-titrage, de la voix-off, de l’habillage sonore, Pragmagora Creative Media vous apportera
+                        des <strong>services professionnels sur mesure.</strong>
+                    </p>
+                </div>
+                <div>
+                    <a href="https://www.pragmagora.be/creative-media/accueil"><span>Visitez Pragmagora Creative Media
+                            <i class="far fa-hand-pointer"></i></span></a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <footer>
+            <p>Copyright © 2019 mydiyvideo.com – Pragmagora Creative Media
+                <a href="http://mydiyvideo.com/Home/Contact">Contact</a>
+            </p>
+
+        </footer>
+
+
+
+
+    </div>
+
+</body>
+
+</html>
