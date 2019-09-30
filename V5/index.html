@@ -32,7 +32,6 @@
     <script>
         $(window).load(function () {
             $('#videoSlider').flexslider({
-                //slideshowSpeed: 31000,
                 slideshow: false,
                 after: function (slider) {
                     $this = $(".flex-active-slide video");
@@ -171,22 +170,22 @@
                 <span id="mute-video"><i class="fas fa-volume-mute"></i></span>
                 <ul class="slides">
                     <li>
-                        <video autoplay muted id="" data-duration="30000">
+                        <video autoplay muted id="" data-duration="30000" playsinline>
                             <source src="assets/video/arnaud.mp4" type="video/mp4">
                         </video>
                     </li>
                     <li>
-                        <video muted id="" data-duration="30000">
+                        <video muted id="" data-duration="30000" playsinline>
                             <source src="assets/video/natacha.mp4" type="video/mp4">
                         </video>
                     </li>
                     <li>
-                        <video muted id="" data-duration="23000">
+                        <video muted id="" data-duration="23000" playsinline>
                             <source src="assets/video/pro.mp4" type="video/mp4">
                         </video>
                     </li>
                     <li>
-                        <video muted id="" data-duration="35000">
+                        <video muted id="" data-duration="35000" playsinline>
                             <source src="assets/video/court.mp4" type="video/mp4">
                         </video>
                     </li>
@@ -270,7 +269,7 @@
 
 
         <div id="midSection2">
-            <img class="thumbnail midSection2" src="assets/img/01b.png" alt="image">
+            <img class="thumbnail midSection2" src="assets/img/01b.jpg" alt="image">
         </div>
 
         <div id="section2">
@@ -342,7 +341,7 @@
 
 
         <div id="midSection3">
-            <img class="thumbnail midSection3" src="assets/img/02b.png" alt="image">
+            <img class="thumbnail midSection3" src="assets/img/02b.jpg" alt="image">
         </div>
 
 
@@ -405,14 +404,17 @@
         </div>
 
         <div id="midSection4">
-            <img class="thumbnail midSection4" src="assets/img/03b.png" alt="image">
+            <img class="thumbnail midSection4" src="assets/img/03b.jpg" alt="image">
         </div>
-
+<!----------------------------------------------------------------------------------
+----------------------------TEMOIGNAGES ICI----------------------------------------
+------------------------------------------------------------------------------------>
         <div id="testimonies">
             <div class="content">
                 <h2><i class="far fa-check-square"></i> Ils en parlent</h2>
                 <div class="flexslider cards" id="testimoniesSlider">
                     <ul class="slides">
+                    <!--Début de la carte témoignage-->
                         <li>
                             <p>
                                 Félicitations pour votre plateforme DIY, nous en sommes vraiment très contents! Cela
@@ -423,6 +425,7 @@
                                 </span>
                             </p>
                         </li>
+                    <!--Fin de la carte témoignage-->
                         <li>
                             <p>
                                 Notre nouveau credo pour 2018! Sans y passer des heures en organisation, en

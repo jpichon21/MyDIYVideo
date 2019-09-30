@@ -95,6 +95,10 @@ p{
     box-shadow: $shadow-lv2;
 }
 
+.flex-direction-nav a{
+    color: transparent!important;
+}
+
 .flex-direction-nav a.flex-next:before {
     content: '>' !important;
     outline: none;
@@ -406,7 +410,7 @@ footer {
     z-index: 3;
     @include media('<=tablet') {
         height: auto;
-        margin-top: 23.4vw;
+        margin-top: 23.9vw;
     }
 
     h1 {
@@ -636,8 +640,10 @@ footer {
     .flexslider:hover .flex-direction-nav .flex-next {
         right: -100px;
     }
+    .flex-direction-nav a {
+        margin: -20px 25px 0;
+    }    
 }
-
 #section2,
 #section2b,
 #section5,
