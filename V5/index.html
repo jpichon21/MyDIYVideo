@@ -11,28 +11,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>DIY - Le Do It Yourself de la vidéo en entreprise</title>
 
-    <meta name="description"
-        content="My DIY Video, service pour entreprises. Vous tournez, nous montons, vous communiquez. Devis gratuit et immédiat, livraison rapide, inscription gratuite.">
+    <meta name="description" content="My DIY Video, service pour entreprises. Vous tournez, nous montons, vous communiquez. Devis gratuit et immédiat, livraison rapide, inscription gratuite.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="icon" href="favicon.ico" />
     <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="css/spectre/spectre.min.css">
+    <link rel="stylesheet" href="css/spectre/spectre-exp.min.css">
+    <link rel="stylesheet" href="css/spectre/spectre-icons.min.css">
     <link rel="stylesheet" href="css/flexslider.css">
     <link href="css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/jquery.flexslider-min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.0.2/dist/simpleParallax.min.js"></script>
+    <script src="js/simpleParallax.min.js"></script>
     <script src="js/scrollreveal.min.js"></script>
 
     <script>
+        //Sliders 
         $(window).load(function () {
             $('#videoSlider').flexslider({
                 slideshow: false,
+                useCSS: false,
+                touch: true,
                 after: function (slider) {
                     $this = $(".flex-active-slide video");
                     $else = $("video");
@@ -55,7 +57,6 @@
         });
     
         $(document).ready(function () {
-
             //parallaxe
             var image1 = document.getElementsByClassName('midSection2');
             new simpleParallax(image1, {
@@ -111,7 +112,7 @@
                 }
             });
 
-            //reveal
+            //smooth reveal
             ScrollReveal().reveal('#section0 .content', {
                 delay: 100
             });
@@ -153,7 +154,7 @@
 </head>
 
 <body>
-
+<!--Menu-->
     <nav id="mainMenu">
         <div id="logoContainer"><a href="http://mydiyvideo.com"><img src="assets/img/LogoSansBaseline.png"></a></div>
         <div id="textContainer">
@@ -163,6 +164,7 @@
             <div id="button"><a href="#section3"><button class="btn btn-primary">Connexion</button></a></div>
         </div>
     </nav>
+<!--menu-->
 
     <div id="mainContainer">
         <div id="videoParallaxe">
@@ -421,8 +423,10 @@
                                 nous permet de faire beaucoup plus de vidéos qu’avant et de les publier beaucoup plus
                                 vite. C’est juste parfait! En plus, le montage est toujours bien fait, suivant nos
                                 indications. C’est une aide précieuse. 
+                            <!--Début du nom de l'auteur-->
                                 <span>Véronique L’heureux - AG Real Estate
                                 </span>
+                            <!--Fin du nom de l'auteur-->
                             </p>
                         </li>
                     <!--Fin de la carte témoignage-->
@@ -484,8 +488,6 @@
         </div>
 
 
-
-
         <footer>
             <p>Copyright © 2019 mydiyvideo.com – Pragmagora Creative Media
                 <a href="http://mydiyvideo.com/Home/Contact">Contact</a>
@@ -494,10 +496,6 @@
         </footer>
 
 
-
-
     </div>
-
 </body>
-
 </html>
